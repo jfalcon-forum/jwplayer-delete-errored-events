@@ -64,9 +64,6 @@ export const handler = async (event) => {
       message: "malformed event",
     };
   }
-  if (event.channel_id !== "oQI9YDnI") {
-    return;
-  }
   let siteId = event.site_id;
   const channel = await getLiveChannel(event.site_id, event.channel_id);
   const erroredEvents = channel.recent_events.map((event) => {
